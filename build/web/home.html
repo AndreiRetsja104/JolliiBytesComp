@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JolliBytesComp_Computer_Parts</title>
+    <link rel="icon" href="Logo_JolliBytesComp_96x96.png" type="image/png" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style1.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+</head>
+<body class="bg-background" style="background: url('img/test.png')">
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-black bg-black fixed-top pt-4 pb-4 text-center">
+    <div class="container">
+        <a class="navbar-brand montblack" href="index.html">
+            <img src="img\Logo_JolliBytesComp_96x96.png" width="40" height="40" alt="JolliBytesComp Logo"/> JolliBytesComp
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto montlight" style="padding-right: 40px;">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown montlight active" id="shop">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropshop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Shop <span class="sr-only">(current)</span>
+                    </a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropshop">
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=GPU">GPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=CPU">CPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=SSD">SSD</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=RAM">RAM</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropsupport" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Support
+                    </a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropsupport">
+                        <a class="dropdown-item text-white" href="contact.html">Contact Us</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropaccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account
+                    </a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="login.html"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
+                        <a class="dropdown-item text-white" href="registration.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+                    </div>
+                </li>
+            </ul>
+            <span class="navbar-text montlight">
+                <form class="form-inline" action="SearchServlet" method="get">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-warning" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </span>
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="margin-top: 15vh;">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css" type="text/css">
+    <div class="container" style="margin-top: 10vh;">
+        <h1 class="ultralinetwo text-Black" style="margin-top: 5vh;"><p22> ACCEPTABLE PRICE FOR A GOOD QUALITY </p22> </h1>
+        <h1 class="ultralinetwo text-Black" style="margin-top: 5vh;"><p22>MAKE YOUR LIFE SHINE-BE HEALTHY WITH US</p22></h1>
+        <div class="row text-center m-auto">
+            <div class="col-md p-1">
+                <img src="img/GPU.png" class="pb-2" alt="GPU Icon">
+                <br>
+                <a href="QueryServlet?producttype=GPU" class="btn btn-outline-warning text-dark montlight">GPU</a>
+            </div>
+            <div class="col-md p-1">
+                <img src="img/CPU.png" class="pb-2" alt="CPU Icon">
+                <br>
+                <a href="QueryServlet?producttype=CPU" class="btn btn-outline-warning text-dark montlight">CPU</a>
+            </div>
+            <div class="col-md p-1">
+                <img src="img/SSD.png" class="pb-2" alt="SSD Icon">
+                <br>
+                <a href="QueryServlet?producttype=SSD" class="btn btn-outline-warning text-dark montlight">SSD</a>
+            </div>
+            <div class="col-md p-1">
+                <img src="img/RAM.png" class="pb-2" alt="RAM Icon">
+                <br>
+                <a href="QueryServlet?producttype=RAM" class="btn btn-outline-warning text-dark montlight">RAM</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
