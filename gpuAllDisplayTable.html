@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Gpu_Information</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style1.css" />
+<link rel="stylesheet" href="css/style2.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+<link rel="icon" href="img/Logo_JolliBytesComp_96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="bg-background" style="background: url('img/test.png')">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-black bg-black fixed-top pt-4 pb-4 text-center">
+    <div class="container">
+        <a class="navbar-brand montblack" href="index.html">
+            <img src="img/Logo_JolliBytesComp_96x96.png" width="40" height="40" alt="JolliBytesComp Logo" />
+            JolliBytesComp
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto montlight" style="padding-right: 40px;">
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Information of Products</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsCPU.html">Comparison CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsGPU.html">Comparison GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="cpuAllDisplayTable.html">All CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="gpuAllDisplayTable.html">All GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ChartForJason.html">Chart</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active" id="shop">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropshop" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Shop <span class="sr-only">(current)</span></a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropshop">
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=GPU">GPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=CPU">CPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=SSD">SSD</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=RAM">RAM</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropsupport" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Support</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropsupport">
+                        <a class="dropdown-item text-white" href="contact.html">Contact Us</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Account</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="login.html"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
+                        <a class="dropdown-item text-white" href="registration.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+                    </div>
+                </li>
+            </ul>
+            <span class="navbar-text montlight">
+                <form class="form-inline" action="SearchServlet" method="get">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-warning" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </span>
+        </div>
+    </div>
+</nav>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 80px;
+    background-color: bisque;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 2px solid #111111;
+    text-align: left;
+    padding: 8px;
+  }
+  th {
+    background-color: bisque;
+  }
+
+  h1{
+    text-align:center;
+  }
+  img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  </style>
+  <h2>GPU Information</h2>
+  <img src="img/gpuLogo.png" width="50" height="60">
+<!--manufacturer filter-->
+<label for="manufacturer">Select Manufacturer:</label>
+<select id="manufacturer">
+  <option value="">All</option>
+  <option value="NVIDIA">NVIDIA</option>
+  <option value="AMD">AMD</option>
+</select>
+
+<!-- Filter for the ram size such as 3gb, 4gb.. etc etc..-->
+<label for="memory-size">Select Memory Size:</label>
+<select id="memory-size">
+  <option value="">All</option>
+  <option value="3GB">3GB</option>
+  <option value="4GB">4GB</option>
+  <option value="6GB">6GB</option>
+  <option value="8GB">8GB</option>
+  <option value="10GB">10GB</option>
+  <option value="11GB">11GB</option>
+  <option value="12GB">12GB</option>
+  <option value="16GB">16GB</option>
+  <option value="20GB">20GB</option>
+  <option value="24GB">24GB</option>
+</select>
+<!--Price filtrrs-->
+<label for="price-range">Select Price Range:</label>
+<select id="price-range">
+  <option value="">All</option>
+  <option value="0-499.99">$0 - $499.99</option>
+  <option value="500-999.99">$500 - $999.99</option>
+  <option value="1000-1499.99">$1000 - $1499.99</option>
+  <option value="1500-1999.99">$1500 - $1999.99</option>
+  <option value="2000+">$2000 and above</option>
+</select>
+
+<table id="gpu-table">
+  <thead>
+    <tr>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Memory Size</th>
+      <th>Memory Type</th>
+      <th>Core Clock</th>
+      <th>Boost Clock</th>
+      <th>Price</th>
+      <th>Currency</th>
+    </tr>
+  </thead>
+  <tbody id="gpu-data">
+    
+  </tbody>
+</table>
+
+<script>
+  
+  fetch('gpu.json')
+    .then(response => response.json())
+    .then(data => {
+      const gpuData = data.graphicsCards;
+      const tableBody = document.getElementById('gpu-data');
+      const manufacturerSelect = document.getElementById('manufacturer');
+      const memorySizeSelect = document.getElementById('memory-size');
+      const priceRangeSelect = document.getElementById('price-range');
+
+      
+      function updateTable(manufacturer, memorySize, priceRange) {
+        
+        tableBody.innerHTML = '';
+
+        
+        const filteredData = gpuData.filter(gpu =>
+          (manufacturer ? gpu.manufacturer === manufacturer : true) &&
+          (memorySize ? gpu.memorySize === memorySize : true) &&
+          (priceRange ? isPriceInRange(gpu.price, priceRange) : true)
+        );
+
+       
+        filteredData.forEach(gpu => {
+          const row = document.createElement('tr');
+
+          
+          for (const property in gpu) {
+            if (gpu.hasOwnProperty(property)) {
+              const cell = document.createElement('td');
+              cell.textContent = gpu[property];
+              row.appendChild(cell);
+            }
+          }
+
+          tableBody.appendChild(row);
+        });
+      }
+
+      
+      function isPriceInRange(price, range) {
+        const [min, max] = range.split('-').map(parseFloat);
+        return parseFloat(price) >= min && parseFloat(price) <= max;
+      }
+
+      
+      updateTable('', '', '');
+
+     
+      manufacturerSelect.addEventListener('change', (event) => {
+        updateTable(event.target.value, memorySizeSelect.value, priceRangeSelect.value);
+      });
+
+      memorySizeSelect.addEventListener('change', (event) => {
+        updateTable(manufacturerSelect.value, event.target.value, priceRangeSelect.value);
+      });
+
+      priceRangeSelect.addEventListener('change', (event) => {
+        updateTable(manufacturerSelect.value, memorySizeSelect.value, event.target.value);
+      });
+    })
+    .catch(error => console.error('Error fetching GPU data:', error));
+</script>
+
+</body>
+</html>

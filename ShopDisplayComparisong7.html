@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> JolliBytesComp_Computer_Parts_Shop </title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/style1.css" />
+	<link rel="stylesheet" href="css/comparison.css" />
+	<link rel="stylesheet" href="css/price.css"/>
+	<link rel="stylesheet" href="css/ShopDisplayProductsCPU.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+	<link rel="icon" href="img/Logo_JolliBytesComp_96x96.png" type="image/png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-background" style="background: url('img/test.png')">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-black bg-black fixed-top pt-4 pb-4 text-center">
+    <div class="container">
+        <a class="navbar-brand montblack" href="index.html">
+            <img src="img/Logo_JolliBytesComp_96x96.png" width="40" height="40" alt="JolliBytesComp Logo" />
+            JolliBytesComp
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto montlight" style="padding-right: 40px;">
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Information of Products</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsCPU.html">Comparison CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsGPU.html">Comparison GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="cpuAllDisplayTable.html">All CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="gpuAllDisplayTable.html">All GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ChartForJason.html">Chart</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active" id="shop">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropshop" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Shop <span class="sr-only">(current)</span></a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropshop">
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=GPU">GPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=CPU">CPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=SSD">SSD</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=RAM">RAM</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropsupport" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Support</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropsupport">
+                        <a class="dropdown-item text-white" href="contact.html">Contact Us</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Account</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="login.html"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
+                        <a class="dropdown-item text-white" href="registration.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+                    </div>
+                </li>
+            </ul>
+            <span class="navbar-text montlight">
+                <form class="form-inline" action="SearchServlet" method="get">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-warning" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </span>
+        </div>
+    </div>
+</nav>
+
+<table class="compb">
+	<tr>
+	<th class="compe"> </th>
+	<th> 
+	<img class="compgpu" src = "img_product/gpu7.jpg" width="150" height="150">
+	<p style="background-color: tomato"> HIGH END GPU </p>
+	<p>Name: Asus Rog Strix Gaming OC RTX 3080 Ti Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 10 GB	</p>
+		<p>Memory Type: GDDR6X	</p>
+		<p>Core Clock:1.44 GHz	</p>
+		<p>Boost Clock:1.71 GHz </p>
+		<p>Price:$1,269 </p>
+		<p>Quality: New </p>
+	<button class="buybtn">Purchase</button>
+	</th>
+	<th class="compe"> </th>
+	</tr>
+	
+	<tr>
+	<th> 
+	<img class="compgpu" src = "img_product/gpu25.jpg" width="150" height="150"> 
+	<p style="background-color: tomato"> BEST BUDGET GPU </p>
+		<p>Name: Sapphire Pulse Radeon RX 7800 XT Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 16 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.4 GHz	</p>
+		<p>Boost Clock:2.4 GHz </p>
+		<p>Price:$509.99 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	</th>
+	<th> <img class="compe"> </th>
+	<th> 
+	<img class="compgpu" src = "img_product/gpu26.jpg" width="150" height="150"> 
+	<p style="background-color: tomato"> MID RANGE GPU </p>
+			<p>Name: PowerColor Hellhound OC Radeon RX 7900 XT Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 20 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock: 2.0 GHz	</p>
+		<p>Boost Clock: 2.5 GHz </p>
+		<p>Price:$839.99 </p>
+		<p>Quality: Pristine </p>
+	<button class="buybtn">Purchase</button>
+	</th>
+	</tr>
+	
+	
+</table>
+   
+<!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>
+

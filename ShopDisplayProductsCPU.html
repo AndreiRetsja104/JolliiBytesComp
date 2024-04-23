@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> JolliBytesComp_Computer_Parts_Shop </title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/style1.css" />
+	<link rel="stylesheet" href="css/price.css"/>
+	<link rel="stylesheet" href="css/ShopDisplayProductsCPU.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+	<link rel="icon" href="img/Logo_JolliBytesComp_96x96.png" type="image/png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <style>
+        /* Add your custom CSS here */
+.pricebox {
+    width: 700px; /* Adjust the width as needed */
+    background-color: #f8f9fa; /* Add your desired background color */
+    border: 3px solid #dee2e6; /* Add border */
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+
+.productdesc p {
+            margin-bottom: 10px;
+        }
+.buybtn {
+            margin-top: 0px;
+            padding: 23px 16px;
+            background-color: #007bff; /* Add your desired button color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+.buybtn:hover {
+            background-color: #0056b3; /* Change button color on hover */
+        }
+p {
+	display: center;
+	text-align: center;
+	padding: auto;
+	margin: 15px;
+
+}
+
+.buybtn {
+	display: center;
+	align-items: center;
+	cursor: pointer;
+	color: #fff;
+	background-color: #007bff;
+	padding: 10px 20px;
+	
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Style headings */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Dark gray */
+}
+
+/* Style information details */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.label {
+  font-weight: bold;
+  color: #666; /* Medium gray */
+}
+
+.value {
+  color: #333; /* Dark gray */
+}
+
+/* Style purchase comparison section */
+.purchase-comparison {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc; /* Light gray */
+  border-radius: 5px;
+  background-color: #f9f9f9; /* Light gray */
+}
+
+/* Style price */
+.price {
+  font-size: 20px;
+  color: #007bff; /* Blue */
+}
+
+    </style>
+	
+</head>
+<body class="bg-background" style="background: url('img/test.png')">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-black bg-black fixed-top pt-4 pb-4 text-center">
+    <div class="container">
+        <a class="navbar-brand montblack" href="index.html">
+            <img src="img/Logo_JolliBytesComp_96x96.png" width="40" height="40" alt="JolliBytesComp Logo" />
+            JolliBytesComp
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto montlight" style="padding-right: 40px;">
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Information of Products</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsCPU.html">Comparison CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsGPU.html">Comparison GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="cpuAllDisplayTable.html">All CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="gpuAllDisplayTable.html">All GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ChartForJason.html">Chart</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active" id="shop">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropshop" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Shop <span class="sr-only">(current)</span></a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropshop">
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=GPU">GPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=CPU">CPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=SSD">SSD</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=RAM">RAM</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropsupport" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Support</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropsupport">
+                        <a class="dropdown-item text-white" href="contact.html">Contact Us</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Account</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="login.html"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
+                        <a class="dropdown-item text-white" href="registration.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+                    </div>
+                </li>
+            </ul>
+            <span class="navbar-text montlight">
+                <form class="form-inline" action="SearchServlet" method="get">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-warning" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </span>
+        </div>
+    </div>
+</nav>
+</body>
+<body1>
+<div class="container text-center">
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu1.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i9-11900k</p>
+		<p>Core Count: 8	</p>
+		<p>Speed: Based Clock: 3.5 GHz  </p>
+		<p>		  Boost_Clock: 5.3 GHz	</p>
+		<p>Platform: LGA 1200	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $549 </p>
+		<p>Quality: Pristine </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisonc1.html'" >Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu2.jpg"width="100" height="100">
+	<div class="productdesc">
+		<p>Brand: AMD </p>
+		<p>Model: Ryzen 9 5900X	</p>
+		<p>Core Count: 12	</p>
+		<p>Speed: Based Clock: 3.7 GHz  </p>
+		<p>		  Boost_Clock: 4.8 GHz	</p>
+		<p>Platform: AM4	</p>
+		<p>Wattage: 105 watts </p>
+		<p>Price: $549 </p>
+		<p>Quality: Pristine </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisonc2.html'" >Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu3.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: AMD </p>
+		<p>Model: Ryzen 5 7600	</p>
+		<p>Core Count: 6	</p>
+		<p>Speed: Based Clock: 3.7 GHz  </p>
+		<p>		  Boost_Clock: 4.8 GHz	</p>
+		<p>Platform: AM4	</p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $219 </p>
+		<p>Quality: Great </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisonc3.html'" >Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu4.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: AMD </p>
+		<p>Model: Ryzen 7 5800X	</p>
+		<p>Core Count: 8	</p>
+		<p>Speed: Based Clock: 4.7 GHz  </p>
+		<p>		  Boost_Clock: 3.8 GHz	</p>
+		<p>Platform: AM4	</p>
+		<p>Wattage: 105 watts </p>
+		<p>Price: $220.70 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisonc4.html'" >Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu5.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: AMD </p>
+		<p>Model: Ryzen 5 5600X	</p>
+		<p>Core Count: 6	</p>
+		<p>Speed: Based Clock: 3.7 GHz  </p>
+		<p>		  Boost_Clock: 4.6 GHz	</p>
+		<p>Platform: AM4	</p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $172.03 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisonc5.html'" >Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu6.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i5-12400F </p>
+		<p>Core Count: 6	</p>
+		<p>Speed: Based Clock: 2.5 GHz  </p>
+		<p>		  Boost_Clock: 3.5 GHz	</p>
+		<p>Platform: LGA 1700 </p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $137.62 </p>
+		<p>Quality: Good </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisonc6.html'" >Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu7.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: AMD </p>
+		<p>Model: Ryzen 5 4600G	</p>
+		<p>Core Count: 6	</p>
+		<p>Speed: Based Clock: 3.7 GHz  </p>
+		<p>		  Boost_Clock: 4.3 GHz	</p>
+		<p>Platform: AM4	</p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $98.11 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisonc7.html'" >Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu8.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i7-14700KF </p>
+		<p>Core Count: 20	</p>
+		<p>Speed: Based Clock: 5.6 GHz  </p>
+		<p>		  Boost_Clock: 6.6 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $429.70 </p>
+		<p>Quality: Like New </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn"onclick="window.location.href='ShopDisplayComparisonc8.html'" >Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu9.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i7-12700KF </p>
+		<p>Core Count: 12	</p>
+		<p>Speed: Based Clock: 3.6 GHz  </p>
+		<p>		  Boost_Clock: 5.0 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $275.55 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisonc9.html'" >Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu10.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: AMD </p>
+		<p>Model: Ryzen 7 5800X3D </p>
+		<p>Core Count: 8	</p>
+		<p>Speed: Based Clock: 3.4 GHz  </p>
+		<p>		  Boost_Clock: 4.5 GHz	</p>
+		<p>Platform: AM4	</p>
+		<p>Wattage: 105 watts </p>
+		<p>Price: $338.61 </p>
+		<p>Quality: Pristine </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisonc10.html'" >Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu11.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i5-13400F </p>
+		<p>Core Count: 10	</p>
+		<p>Speed: Based Clock: 4.6 GHz  </p>
+		<p>		  Boost_Clock: 5.6 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $227.68 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu12.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i3-12100F </p>
+		<p>Core Count: 4	</p>
+		<p>Speed: Based Clock: 3.3 GHz  </p>
+		<p>		  Boost_Clock: 4.3 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 58 watts </p>
+		<p>Price: $96.591 </p>
+		<p>Quality: Working </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu13.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i5-13600K </p>
+		<p>Core Count: 14	</p>
+		<p>Speed: Based Clock: 3.5 GHz  </p>
+		<p>		  Boost_Clock: 5.10 GHz	</p>
+		<p>Platform: LGA 1356	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $319 </p>
+		<p>Quality: Great</p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu14.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i7-12700K </p>
+		<p>Core Count: 12	</p>
+		<p>Speed: Based Clock: 3.6 GHz  </p>
+		<p>		  Boost_Clock: 4.6 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $249.97 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu15.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i7-13700KF </p>
+		<p>Core Count: 16	</p>
+		<p>Speed: Based Clock: 3.4 GHz  </p>
+		<p>		  Boost_Clock: 5.4 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $386.49 </p>
+		<p>Quality: Like New </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu16.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i7-14700KF </p>
+		<p>Core Count: 20	</p>
+		<p>Speed: Based Clock: 5.6 GHz  </p>
+		<p>		  Boost_Clock: 6.6 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $453.04 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu17.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: AMD </p>
+		<p>Model: Ryzen 3 3200G</p>
+		<p>Core Count: 4	</p>
+		<p>Speed: Based Clock: 3.6 GHz  </p>
+		<p>		  Boost_Clock: 4.0 GHz	</p>
+		<p>Platform: AM4	</p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $78.95 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu18.jpg" width="150" height="150" >
+	<div class="productdesc">
+		<p>Brand: AMD </p>
+		<p>Model: Ryzen 7 8700G </p>
+		<p>Core Count: 8	</p>
+		<p>Speed: Based Clock: 4.2 GHz  </p>
+		<p>		  Boost_Clock: 4.9 GHz	</p>
+		<p>Platform: AM4	</p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $360.82 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu19.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i7-12700 </p>
+		<p>Core Count: 12	</p>
+		<p>Speed: Based Clock: 2.1 GHz  </p>
+		<p>		  Boost_Clock: 4.9 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $294.24 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu20.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i5-12400 </p>
+		<p>Core Count: 6	</p>
+		<p>Speed: Based Clock: 2.5 GHz  </p>
+		<p>		  Boost_Clock: 3.5 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $179.53 </p>
+		<p>Quality: Working </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu21.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i9-14900K </p>
+		<p>Core Count: 24	</p>
+		<p>Speed: Based Clock: 6 GHz  </p>
+		<p>		  Boost_Clock: 7 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $635.22 </p>
+		<p>Quality: Pristine </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu22.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i7-13700K </p>
+		<p>Core Count: 16	</p>
+		<p>Speed: Based Clock: 3.4 GHz  </p>
+		<p>		  Boost_Clock: 4.0 GHz	</p>
+		<p>Platform: LGA 1351	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $428.53 </p>
+		<p>Quality: Great </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu23.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i5-12600KF </p>
+		<p>Core Count: 10	</p>
+		<p>Speed: Based Clock: 3.7 GHz  </p>
+		<p>		  Boost_Clock: 4.8 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $231.78 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu24.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i5-13500 </p>
+		<p>Core Count: 14	</p>
+		<p>Speed: Based Clock: 4.8 GHz  </p>
+		<p>		  Boost_Clock: 5.8 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $263.88 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu25.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: AMD </p>
+		<p>Model: Ryzen 5 7600 </p>
+		<p>Core Count: 6	</p>
+		<p>Speed: Based Clock: 3.7 GHz  </p>
+		<p>		  Boost_Clock: 4.8 GHz	</p>
+		<p>Platform: AM4	</p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $219 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu26.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i9-14900KF </p>
+		<p>Core Count: 24	</p>
+		<p>Speed: Based Clock: 6 GHz  </p>
+		<p>		  Boost_Clock: 7 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $596.69 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu27.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i5-14400F </p>
+		<p>Core Count: 10	</p>
+		<p>Speed: Based Clock: 4.7 GHz  </p>
+		<p>		  Boost_Clock: 5 GHz	</p>
+		<p>Platform: LGA 1700	</p>
+		<p>Wattage: 125 watts </p>
+		<p>Price: $227.68 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu28.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: Intel </p>
+		<p>Model: Core i9-9900K </p>
+		<p>Core Count: 8	</p>
+		<p>Speed: Based Clock: 5 GHz  </p>
+		<p>		  Boost_Clock: 6 GHz	</p>
+		<p>Platform: LGA 1151	</p>
+		<p>Wattage: 95 watts </p>
+		<p>Price: $525.49 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/cpu29.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Brand: AMD </p>
+		<p>Model: Ryzen 5 5500GT</p>
+		<p>Core Count: 6	</p>
+		<p>Speed: Based Clock: 3.6 GHz  </p>
+		<p>		  Boost_Clock: 4.6 GHz	</p>
+		<p>Platform: AM4	</p>
+		<p>Wattage: 65 watts </p>
+		<p>Price: $137.63 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+</div>
+</div>
+
+
+   
+<!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+</body1>
+</html>
+

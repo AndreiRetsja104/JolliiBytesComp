@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cpu_Information</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style1.css" />
+<link rel="stylesheet" href="css/style2.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+<link rel="icon" href="img/Logo_JolliBytesComp_96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="bg-background"
+	style="background: url('img/tbackground1.gif')">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-black bg-black fixed-top pt-4 pb-4 text-center">
+    <div class="container">
+        <a class="navbar-brand montblack" href="index.html">
+            <img src="img/Logo_JolliBytesComp_96x96.png" width="40" height="40" alt="JolliBytesComp Logo" />
+            JolliBytesComp
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto montlight" style="padding-right: 40px;">
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Information of Products</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsCPU.html">Comparison CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsGPU.html">Comparison GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="cpuAllDisplayTable.html">All CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="gpuAllDisplayTable.html">All GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ChartForJason.html">Chart</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active" id="shop">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropshop" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Shop <span class="sr-only">(current)</span></a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropshop">
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=GPU">GPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=CPU">CPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=SSD">SSD</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=RAM">RAM</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropsupport" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Support</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropsupport">
+                        <a class="dropdown-item text-white" href="contact.html">Contact Us</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Account</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="login.html"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
+                        <a class="dropdown-item text-white" href="registration.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+                    </div>
+                </li>
+            </ul>
+            <span class="navbar-text montlight">
+                <form class="form-inline" action="SearchServlet" method="get">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-warning" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </span>
+        </div>
+    </div>
+</nav>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: bisque;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #111111;
+    text-align: left;
+    padding: 8px;
+  }
+  th {
+    background-color: bisque;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+</style>
+	<h2>CPU Information</h2>
+	<img src="img/CPU01.png" width="50" height="60">
+<label for="category-filter">Filter by Category:</label>
+<select id="category-filter">
+  <option value="All">All</option>
+  <option value="Intel">Intel</option>
+  <option value="AMD">AMD</option>
+</select>
+
+<label for="min-price">Min Price:</label>
+<input type="number" id="min-price" placeholder="Min Price">
+
+<label for="max-price">Max Price:</label>
+<input type="number" id="max-price" placeholder="Max Price">
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Base Clock</th>
+      <th>Boost Clock</th>
+      <th>Platform</th>
+      <th>Wattage</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody id="cpu-info-body">
+ 
+  </tbody>
+</table>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  fetch('cpu.json')
+    .then(response => response.json())
+    .then(data => {
+      // Store CPU information
+      const cpuData = data.CPUs;
+
+    
+      function renderCPUInfo(cpuArray) {
+      
+        document.getElementById('cpu-info-body').innerHTML = '';
+
+      
+        cpuArray.forEach(cpu => {
+          var row = document.createElement('tr');
+          var brandCell = document.createElement('td');
+          var modelCell = document.createElement('td');
+          var baseClockCell = document.createElement('td');
+          var boostClockCell = document.createElement('td');
+          var platformCell = document.createElement('td');
+          var wattageCell = document.createElement('td');
+          var priceCell = document.createElement('td');
+
+          brandCell.textContent = cpu.brand;
+          modelCell.textContent = cpu.model;
+          baseClockCell.textContent = cpu.speed.base_clock;
+          boostClockCell.textContent = cpu.speed.boost_clock;
+          platformCell.textContent = cpu.platform;
+          wattageCell.textContent = cpu.wattage;
+          priceCell.textContent = cpu.price;
+
+          row.appendChild(brandCell);
+          row.appendChild(modelCell);
+          row.appendChild(baseClockCell);
+          row.appendChild(boostClockCell);
+          row.appendChild(platformCell);
+          row.appendChild(wattageCell);
+          row.appendChild(priceCell);
+
+          document.getElementById('cpu-info-body').appendChild(row);
+        });
+      }
+
+document.getElementById('category-filter').addEventListener('change', function(event) {
+  filterCPUs();
+});
+
+
+document.getElementById('min-price').addEventListener('input', function(event) {
+  filterCPUs();
+});
+
+document.getElementById('max-price').addEventListener('input', function(event) {
+  filterCPUs();
+});
+
+
+function filterCPUs() {
+  const selectedCategory = document.getElementById('category-filter').value;
+  const minPrice = parseFloat(document.getElementById('min-price').value);
+  const maxPrice = parseFloat(document.getElementById('max-price').value);
+
+  let filteredCPU = cpuData;
+
+  if (selectedCategory !== 'All') {
+    filteredCPU = filteredCPU.filter(cpu => cpu.brand === selectedCategory);
+  }
+
+  if (!isNaN(minPrice)) {
+    filteredCPU = filteredCPU.filter(cpu => parseFloat(cpu.price.slice(1)) >= minPrice);
+  }
+
+  if (!isNaN(maxPrice)) {
+    filteredCPU = filteredCPU.filter(cpu => parseFloat(cpu.price.slice(1)) <= maxPrice);
+  }
+
+  renderCPUInfo(filteredCPU);
+}
+
+    
+      renderCPUInfo(cpuData);
+
+    
+      document.getElementById('category-filter').addEventListener('change', function(event) {
+        const selectedCategory = event.target.value;
+        if (selectedCategory === 'All') {
+          
+          renderCPUInfo(cpuData);
+        } else {
+        
+          const filteredCPU = cpuData.filter(cpu => cpu.brand === selectedCategory);
+          renderCPUInfo(filteredCPU);
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching CPU information:', error);
+    });
+});
+</script>
+
+</body>
+</html>
+

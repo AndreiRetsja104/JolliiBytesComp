@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> JolliBytesComp_Computer_Parts_Shop </title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/style1.css" />
+	<link rel="stylesheet" href="css/comparison.css" />
+	<link rel="stylesheet" href="css/price.css"/>
+	<link rel="stylesheet" href="css/ShopDisplayProducts.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+	<link rel="icon" href="img/Logo_JolliBytesComp_96x96.png" type="image/png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <style>
+            /* Add your custom CSS here */
+.pricebox {
+    width: 900px; /* Adjust the width as needed */
+    height: 800px; 
+    background-color: #f8f9fa; /* Add your desired background color */
+    border: 3px solid #dee2e6; /* Add border */
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+
+.productdesc p {
+            margin-bottom: 0px;
+        }
+.buybtn {
+            margin-top: 30px;
+            padding: 23px 16px;
+            background-color: #007bff; /* Add your desired button color */
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+.buybtn:hover {
+            background-color: #0056b3; /* Change button color on hover */
+        }
+p {
+	display: center;
+	text-align: center;
+	padding: auto;
+	margin: 8px;
+
+}
+
+.buybtn {
+	display: center;
+	align-items: center;
+	cursor: pointer;
+	color: #fff;
+	background-color: #007bff;
+	padding: 10px 20px;
+	
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Style headings */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Dark gray */
+}
+
+/* Style information details */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.label {
+  font-weight: bold;
+  color: #666; /* Medium gray */
+}
+
+.value {
+  color: #333; /* Dark gray */
+}
+
+/* Style purchase comparison section */
+.purchase-comparison {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc; /* Light gray */
+  border-radius: 5px;
+  background-color: #f9f9f9; /* Light gray */
+}
+
+/* Style price */
+.price {
+  font-size: 20px;
+  color: #007bff; /* Blue */
+}
+
+    </style>
+</head>
+<body class="bg-background" style="background: url('img/test.png')">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-black bg-black fixed-top pt-4 pb-4 text-center">
+    <div class="container">
+        <a class="navbar-brand montblack" href="index.html">
+            <img src="img/Logo_JolliBytesComp_96x96.png" width="40" height="40" alt="JolliBytesComp Logo" />
+            JolliBytesComp
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto montlight" style="padding-right: 40px;">
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Information of Products</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsCPU.html">Comparison CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsGPU.html">Comparison GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="cpuAllDisplayTable.html">All CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="gpuAllDisplayTable.html">All GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ChartForJason.html">Chart</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active" id="shop">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropshop" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Shop <span class="sr-only">(current)</span></a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropshop">
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=GPU">GPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=CPU">CPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=SSD">SSD</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=RAM">RAM</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropsupport" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Support</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropsupport">
+                        <a class="dropdown-item text-white" href="contact.html">Contact Us</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Account</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="login.html"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
+                        <a class="dropdown-item text-white" href="registration.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+                    </div>
+                </li>
+            </ul>
+            <span class="navbar-text montlight">
+                <form class="form-inline" action="SearchServlet" method="get">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-warning" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </span>
+        </div>
+    </div>
+</nav>
+</body>
+<body>
+<div>
+<div class="pricebox"> 
+	<img class="gpu" src ="img_product/1PNYRTX3080.png" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: PNY PNY GeForce RTX 3080 Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 10 GB	</p>
+		<p>Memory Type: GDDR6X	</p>
+		<p>Core Clock:1.44 GHz	</p>
+		<p>Boost Clock:1.71 GHz </p>
+		<p>Price:699.99 </p>
+		<p>Quality: Good </p>
+		<p> </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisong1.html'">Quick Comparison</button>
+	</div>
+	
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu2.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: ASRock Phantom RX 6800 XT Gaming Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 16 GB	</p>
+		<p>Memory Type: GDDR6X	</p>
+		<p>Core Clock:1.82 GHz	</p>
+		<p>Boost Clock:2.25 GHz </p>
+		<p>Price:$649.99 </p>
+		<p>Quality: Pristine </p>
+		<p> </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisong2.html'">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu3.jpg" width="150" height="150" >
+	<div class="productdesc">
+		<p>Name: Asus TUF Gaming RX 3070 Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 8 GB	</p>
+		<p>Memory Type: GDDR6 </p>
+		<p>Core Clock:1.50 GHz	</p>
+		<p>Boost Clock:1.73 GHz </p>
+		<p>Price:$499.99 </p>
+		<p>Quality: Like New</p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisong3.html'">Quick Comparison</button>
+	</div>	
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu4.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: ASRock Radeon RX6700 XT Graphics Card</p>
+		<p>Manufacturer: AMD</p>
+		<p>Memory Size: 12 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:2.42 GHz	</p>
+		<p>Boost Clock:2.58 GHz </p>
+		<p>Price:$479.99 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparison4.html'">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu5.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 24 GB	</p>
+		<p>Memory Type: GDDR6X	</p>
+		<p>Core Clock:1.67 GHz	</p>
+		<p>Boost Clock:1.86 GHz </p>
+		<p>Price:$1,970</p>
+		<p>Quality: New </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisong5.html'"> >Quick Comparison</button>
+	</div>	
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu6.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Asus Strix Gaming OC RTX 3090 Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 24 GB	</p>
+		<p>Memory Type: GDDR6X	</p>
+		<p>Core Clock:1.40 GHz	</p>
+		<p>Boost Clock:1.70 GHz </p>
+		<p>Price:$1,739 </p>
+		<p>Quality: New </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisong6.html'" >Quick Comparison</button>
+	</div>		
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu7.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Asus Rog Strix Gaming OC RTX 3080 Ti Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 10 GB	</p>
+		<p>Memory Type: GDDR6X	</p>
+		<p>Core Clock:1.44 GHz	</p>
+		<p>Boost Clock:1.71 GHz </p>
+		<p>Price:$1,269 </p>
+		<p>Quality: New </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisong7.html'">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu8.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: MSI Gaming X Trio RTX 3070 Ti Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 8 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.58 GHz	</p>
+		<p>Boost Clock:1.77 GHz </p>
+		<p>Price:$699.99 </p>
+		<p>Quality: Good </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn"onclick="window.location.href='ShopDisplayComparisong8.html'" >Quick Comparison</button>
+	</div>	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu9.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Asus Rog Strix Gaming OC RTX 3060 Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 8 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.32 GHz	</p>
+		<p>Boost Clock:1.78 GHz </p>
+		<p>Price:$349 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn" onclick="window.location.href='ShopDisplayComparisong9.html'" >Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu10.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Gigabyte Gaming OC RTX 3060 Ti Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 8 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.41 GHz	</p>
+		<p>Boost Clock:1.67 GHz </p>
+		<p>Price:$579.90 </p>
+		<p>Quality: Good</p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn"onclick="window.location.href='ShopDisplayComparisong10.html'">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu11.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: NVIDIA Founders Edition RTX 4090 Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 24 GB	</p>
+		<p>Memory Type: GDDR6X	</p>
+		<p>Core Clock:2.2 GHz	</p>
+		<p>Boost Clock:2.52 GHz </p>
+		<p>Price:$1,629.99 </p>
+		<p>Quality: New </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+		<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu12.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Asus ROG Strix Gaming OC RTX 4080 Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 16 GB	</p>
+		<p>Memory Type: GDDR6X	</p>
+		<p>Core Clock: 2.2 GHz	</p>
+		<p>Boost Clock: 2.52 GHz </p>
+		<p>Price:$1,199.99 </p>
+		<p>Quality: Great </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu13.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name:  RTX 4070 Ti Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 12 GB	</p>
+		<p>Memory Type: GDDR6X	</p>
+		<p>Core Clock: 2.3 GHz	</p>
+		<p>Boost Clock: 2.62 GHz </p>
+		<p>Price:$799.99 </p>
+		<p>Quality: Used</p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+		<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu14.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: MSI Ventus 3X OC RTX 4060 Ti Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 16 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock: 2.6 GHz	</p>
+		<p>Boost Clock: 2.3 GHz </p>
+		<p>Price:$482 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu15.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Asus Strix Gaming OC RTX 2080 Ti Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 11 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.35 GHz	</p>
+		<p>Boost Clock:1.66 GHz </p>
+		<p>Price:$588.06</p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu16.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: MSI Ventus XS OC RTX 2080 Super Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 8 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.65 GHz	</p>
+		<p>Boost Clock:1.83 GHz </p>
+		<p>Price:$394.02 </p>
+		<p>Quality: Used</p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu17.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: MSI Ventus GP OC RTX 2070 Super Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 8 GB	</p>
+		<p>Memory Type: GDDR6X	</p>
+		<p>Core Clock:1.60 GHz	</p>
+		<p>Boost Clock:1.80 GHz </p>
+		<p>Price:$358 </p>
+		<p>Quality: Used</p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu18.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Asus Strix Gaming GTX 1080 Ti Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 11 GB	</p>
+		<p>Memory Type: GDDR5X	</p>
+		<p>Core Clock:1.56 GHz	</p>
+		<p>Boost Clock:1.63 GHz </p>
+		<p>Price:$429.99 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu19.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Gigabyte Gaming OC GTX 1080 Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 8 GB	</p>
+		<p>Memory Type: GDDR5X	</p>
+		<p>Core Clock:1.60 GHz	</p>
+		<p>Boost Clock:1.82 GHz </p>
+		<p>Price:$245 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu20.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: GTX 1070 Ti Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 8 GB	</p>
+		<p>Memory Type: GDDR5	</p>
+		<p>Core Clock:1.60 GHz	</p>
+		<p>Boost Clock:1.68 GHz </p>
+		<p>Price:$333 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu21.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: GTX 1060 Graphics Card</p>
+		<p>Manufacturer: Nvidia </p>
+		<p>Memory Size: 3 GB	</p>
+		<p>Memory Type: GDDR5	</p>
+		<p>Core Clock:1.6 GHz	</p>
+		<p>Boost Clock:1.83 GHz </p>
+		<p>Price:$399 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu22.jpg" width="150" height="150"> 
+	<div class="productdesc">
+		<p>Name: ASRock Phantom Gaming D OC RX 6900 XT Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 16 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.9 GHz	</p>
+		<p>Boost Clock:2.3 GHz </p>
+		<p>Price:$629.99</p>
+		<p>Quality: Great </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu23.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Asus Rog Strix Gaming OC Radeon RX 6600 XT Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 8 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.96 GHz	</p>
+		<p>Boost Clock:2.6GHz </p>
+		<p>Price:$399.99 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu24.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Sapphire Pure Radeon RX 7700 XT Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 12 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock: 1.7 GHz	</p>
+		<p>Boost Clock: 2.5 GHz </p>
+		<p>Price:$449.99 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu25.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Sapphire Pulse Radeon RX 7800 XT Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 16 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.4 GHz	</p>
+		<p>Boost Clock:2.4 GHz </p>
+		<p>Price:$509.99 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu26.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: PowerColor Hellhound OC Radeon RX 7900 XT Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 20 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock: 2.0 GHz	</p>
+		<p>Boost Clock: 2.5 GHz </p>
+		<p>Price:$839.99 </p>
+		<p>Quality: Pristine </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu27.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Sapphire Nitro+ Radeon RX 7900 XTX Graphics Card</p>
+		<p>Manufacturer: AMD</p>
+		<p>Memory Size: 24 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock: 2.3 GHz	</p>
+		<p>Boost Clock: 2.6 GHz </p>
+		<p>Price:$1,029.99 </p>
+		<p>Quality: Like New </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu28.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Radeon RX 550 Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 4 GB	</p>
+		<p>Memory Type: GDDR5	</p>
+		<p>Core Clock:1.2 GHz	</p>
+		<p>Boost Clock:1.5 GHz </p>
+		<p>Price:$1,029.99 </p>
+		<p>Quality: Pristine </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu29.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: MSI Mech OC Radeon RX 5500 XT Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 8 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.6 GHz	</p>
+		<p>Boost Clock:1.8 GHz </p>
+		<p>Price:$398.68</p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu30.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: PowerColor AXRX Radeon RX 560 Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 4 GB	</p>
+		<p>Memory Type: GDDR5	</p>
+		<p>Core Clock: 1.2 GHz	</p>
+		<p>Boost Clock: N/A </p>
+		<p>Price:$289</p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu31.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name:Sapphire Pulse Radeon RX 5600 XT Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 6 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.2 GHz	</p>
+		<p>Boost Clock:1.7 GHz </p>
+		<p>Price:$250 </p>
+		<p>Quality: Great </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu32.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: ASRock Phantom Gaming Radeon RX 570 Graphics Card</p>
+		<p>Manufacturer: AMD</p>
+		<p>Memory Size: 10 GB	</p>
+		<p>Memory Type: GDDR5	</p>
+		<p>Core Clock:1.1GHz	</p>
+		<p>Boost Clock:1.2 GHz </p>
+		<p>Price:$339.95 </p>
+		<p>Quality: Great </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+	<div class="pricebox"> 
+	<img class="gpu" src ="img_product/gpu33.jpg" width="150" height="150">
+	<div class="productdesc">
+		<p>Name: Gigabyte Gaming OC Radeon RX 5700 XT Graphics Card</p>
+		<p>Manufacturer: AMD </p>
+		<p>Memory Size: 8 GB	</p>
+		<p>Memory Type: GDDR6	</p>
+		<p>Core Clock:1.8 GHz	</p>
+		<p>Boost Clock:2.0 GHz </p>
+		<p>Price:$389 </p>
+		<p>Quality: Used </p>
+	<button class="buybtn">Purchase</button>
+	<button class="buybtn">Quick Comparison</button>
+	</div>
+</div>
+
+
+
+
+   
+<!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>
+

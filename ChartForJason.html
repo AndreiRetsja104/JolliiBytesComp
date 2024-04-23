@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cpu_Information</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style1.css" />
+<link rel="stylesheet" href="css/style2.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+<link rel="icon" href="img/Logo_JolliBytesComp_96x96.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="bg-background"
+	style="background: url('img/tbackground1.gif')">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-black bg-black fixed-top pt-4 pb-4 text-center">
+    <div class="container">
+        <a class="navbar-brand montblack" href="welcome.html">
+            <img src="img/Logo_JolliBytesComp_96x96.png" width="40" height="40" alt="JolliBytesComp Logo" />
+            JolliBytesComp
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto montlight" style="padding-right: 40px;">
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Information of Products</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsCPU.html">Comparison CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsGPU.html">Comparison GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="cpuAllDisplayTable.html">All CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="gpuAllDisplayTable.html">All GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ChartForJason.html">Chart</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active" id="shop">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropshop" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Shop <span class="sr-only">(current)</span></a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropshop">
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=GPU">GPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=CPU">CPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=SSD">SSD</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=RAM">RAM</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropsupport" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Support</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropsupport">
+                        <a class="dropdown-item text-white" href="contact.html">Contact Us</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Account</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="login.html"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
+                        <a class="dropdown-item text-white" href="registration.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+                    </div>
+                </li>
+            </ul>
+            <span class="navbar-text montlight">
+                <form class="form-inline" action="SearchServlet" method="get">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-warning" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </span>
+        </div>
+    </div>
+</nav>
+<body/>
+	<div class="filter-buttons">
+		<button onclick="filterData('CPU')">Chart CPU</button>
+		<button onclick="filterData('GPU')">Chart GPU</button>
+		<button onclick="filterData('SSD')">Chart SSD</button>
+		<button onclick="filterData('RAM')">Chart RAM</button>
+	</div>
+
+	<canvas id="barGraph" width="400" height="400"></canvas>
+
+	<!-- Include Chart.js from CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<!-- Include jQuery from CDN for AJAX -->
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+        let originalData; // Store the original data
+        let barGraph; // Store the chart instance
+
+        // Sample JSON data with multiple parameters
+        const jsonData = [
+        	{"id":1,"type":"GPU","name":"NVIDIA RTX 3080","manufacturer":"NVIDIA","price":699.99,"quantity":10,"specifications":{"memory":"10GB GDDR6X","clockSpeed":"1.44 GHz - 1.71 GHz"}},
+        	{"id":2,"type":"GPU","name":"AMD Radeon RX 6800 XT","manufacturer":"AMD","price":649.99,"quantity":20,"specifications":{"memory":"16GB GDDR6","clockSpeed":"1.82 GHz - 2.25 GHz"}},
+        	{"id":3,"type":"GPU","name":"NVIDIA RTX 3070","manufacturer":"NVIDIA","price":499.99,"quantity":15,"specifications":{"memory":"8GB GDDR6","clockSpeed":"1.50 GHz - 1.73 GHz"}},
+        	{"id":4,"type":"GPU","name":"AMD Radeon RX 6700 XT","manufacturer":"AMD","price":479.99,"quantity":25,"specifications":{"memory":"12GB GDDR6","clockSpeed":"2.42 GHz - 2.58 GHz"}},
+        	{"id":5,"type":"GPU","name":"NVIDIA RTX 3090 Ti","manufacturer":"NVIDIA","price":1970,"quantity":5,"specifications":{"memory":"24GB GDDR6X","clockSpeed":"1.67 GHz - 1.86 GHz"}},
+        	{"id":6,"type":"GPU","name":"NVIDIA RTX 3090","manufacturer":"NVIDIA","price":1739.00,"quantity":8,"specifications":{"memory":"24GB GDDR6X","clockSpeed":"1.40 GHz - 1.70 GHz"}},
+        	{"id":7,"type":"GPU","name":"NVIDIA RTX 3080 Ti","manufacturer":"NVIDIA","price":1269.00,"quantity":12,"specifications":{"memory":"10GB GDDR6X","clockSpeed":"1.44 GHz - 1.71 GHz"}},
+        	{"id":8,"type":"GPU","name":"NVIDIA RTX 3070 Ti","manufacturer":"NVIDIA","price":699.99,"quantity":20,"specifications":{"memory":"8GB GDDR6","clockSpeed":"1.58 GHz - 1.77 GHz"}},
+        	{"id":9,"type":"GPU","name":"NVIDIA RTX 3060","manufacturer":"NVIDIA","price":349.00,"quantity":30,"specifications":{"memory":"8GB GDDR6","clockSpeed":"1.32 GHz - 1.78 GHz"}},
+        	{"id":10,"type":"GPU","name":"NVIDIA RTX 3060 Ti","manufacturer":"NVIDIA","price":579.90,"quantity":15,"specifications":{"memory":"8GB GDDR6","clockSpeed":"1.41 GHz - 1.67 GHz"}},
+        	{"id":11,"type":"GPU","name":"NVIDIA RTX 4090","manufacturer":"NVIDIA","price":1629.99,"quantity":7,"specifications":{"memory":"24GB GDDR6X","clockSpeed":"2.2 GHz - 2.52 GHz"}},
+        	{"id":12,"type":"GPU","name":"NVIDIA RTX 4080","manufacturer":"NVIDIA","price":1199.99,"quantity":10,"specifications":{"memory":"16GB GDDR6X","clockSpeed":"2.2 GHz - 2.52 GHz"}},
+        	{"id":13,"type":"GPU","name":"NVIDIA RTX 4070 Ti","manufacturer":"NVIDIA","price":799.99,"quantity":8,"specifications":{"memory":"12GB GDDR6X","clockSpeed":"2.3 GHz - 2.62 GHz"}},
+        	{"id":14,"type":"GPU","name":"NVIDIA RTX 4060 Ti","manufacturer":"NVIDIA","price":482,"quantity":20,"specifications":{"memory":"16GB GDDR6","clockSpeed":"2.6 GHz - 2.3 GHz"}},
+        	{"id":15,"type":"GPU","name":"NVIDIA RTX 2080 Ti","manufacturer":"NVIDIA","price":588.06,"quantity":5,"specifications":{"memory":"11GB GDDR6","clockSpeed":"1.35 GHz - 1.66 GHz"}},
+        	{"id":16,"type":"GPU","name":"NVIDIA RTX 2080 Super","manufacturer":"NVIDIA","price":394.02,"quantity":10,"specifications":{"memory":"8GB GDDR6","clockSpeed":"1.65 GHz - 1.83 GHz"}},
+        	{"id":17,"type":"GPU","name":"NVIDIA RTX 2070 Super","manufacturer":"NVIDIA","price":358,"quantity":15,"specifications":{"memory":"8GB GDDR6","clockSpeed":"1.60 GHz - 1.80 GHz"}},
+        	{"id":18,"type":"GPU","name":"NVIDIA GTX 1080 Ti","manufacturer":"NVIDIA","price":429.99,"quantity":7,"specifications":{"memory":"11GB GDDR5X","clockSpeed":"1.56 GHz - 1.63 GHz"}},
+        	{"id":19,"type":"GPU","name":"NVIDIA GTX 1080","manufacturer":"NVIDIA","price":245,"quantity":25,"specifications":{"memory":"8GB GDDR5X","clockSpeed":"1.68 GHz - 1.82 GHz"}},
+        	{"id":20,"type":"GPU","name":"NVIDIA GTX 1070 Ti","manufacturer":"NVIDIA","price":333,"quantity":18,"specifications":{"memory":"8GB GDDR5","clockSpeed":"1.60 GHz - 1.68 GHz"}},
+        	{"id":21,"type":"GPU","name":"NVIDIA GTX 1060","manufacturer":"NVIDIA","price":399.00,"quantity":20,"specifications":{"memory":"3GB GDDR5","clockSpeed":"1.6 GHz - 1.83 GHz"}},
+        	{"id":22,"type":"GPU","name":"AMD Radeon RX 6900 XT","manufacturer":"AMD","price":629.99,"quantity":12,"specifications":{"memory":"16GB GDDR6","clockSpeed":"1.9 GHz - 2.3 GHz"}},
+        	{"id":23,"type":"GPU","name":"AMD Radeon RX 6600 XT","manufacturer":"AMD","price":399.00,"quantity":15,"specifications":{"memory":"8GB GDDR6","clockSpeed":"1.96 GHz - 2.6 GHz"}},
+        	{"id":24,"type":"GPU","name":"AMD Radeon RX 7700 XT","manufacturer":"AMD","price":449.99,"quantity":10,"specifications":{"memory":"12GB GDDR6","clockSpeed":"1.7 GHz - 2.5 GHz"}},
+        	{"id":25,"type":"GPU","name":"AMD Radeon RX 7800 XT","manufacturer":"AMD","price":509.99,"quantity":8,"specifications":{"memory":"16GB GDDR6","clockSpeed":"1.4 GHz - 2.4 GHz"}},
+        	{"id":26,"type":"GPU","name":"AMD Radeon RX 7900 XT","manufacturer":"AMD","price":839.99,"quantity":5,"specifications":{"memory":"20GB GDDR6","clockSpeed":"2.0 GHz - 2.5 GHz"}},
+        	{"id":27,"type":"GPU","name":"AMD Radeon RX 7900 XTX","manufacturer":"AMD","price":1029.99,"quantity":3,"specifications":{"memory":"24GB GDDR6","clockSpeed":"2.3 GHz - 2.6 GHz"}},
+        	{"id":28,"type":"GPU","name":"AMD Radeon RX 550","manufacturer":"AMD","price":1029.99,"quantity":20,"specifications":{"memory":"4GB GDDR5","clockSpeed":"1.2 GHz - 1.5 GHz"}},
+        	{"id":29,"type":"GPU","name":"AMD Radeon RX 5550 XT","manufacturer":"AMD","price":398.68,"quantity":15,"specifications":{"memory":"8GB GDDR6","clockSpeed":"1.6 GHz - 1.8 GHz"}},
+        	{"id":30,"type":"GPU","name":"AMD Radeon RX 5550 XT","manufacturer":"AMD","price":398.68,"quantity":25,"specifications":{"memory":"8GB GDDR6","clockSpeed":"1.6 GHz - 1.8 GHz"}},
+        	{"id":31,"type":"GPU","name":"AMD Radeon RX 560","manufacturer":"AMD","price":289.00,"quantity":20,"specifications":{"memory":"4GB GDDR5","clockSpeed":"1.2 GHz - None"}},
+        	{"id":32,"type":"GPU","name":"AMD Radeon RX 5600 XT","manufacturer":"AMD","price":250.00,"quantity":18,"specifications":{"memory":"6GB GDDR6","clockSpeed":"1.2 GHz - 1.7 GHz"}},
+        	{"id":33,"type":"GPU","name":"AMD Radeon RX 570","manufacturer":"AMD","price":339.95,"quantity":10,"specifications":{"memory":"8GB GDDR5","clockSpeed":"1.1 GHz - 1.2 GHz"}},
+        	{"id":34,"type":"GPU","name":"AMD Radeon RX 5700 XT","manufacturer":"AMD","price":389.00,"quantity":15,"specifications":{"memory":"8GB GDDR6","clockSpeed":"1.8 GHz - 2.0 GHz"}},
+        	  {"id":5,"type":"CPU","name":"Core i9-11900K","manufacturer":"Intel","price":549,"quantity":50,"specifications":{"cores":8,"clockSpeed":"5.3 GHz"}},
+        	  {"id":6,"type":"CPU","name":"Ryzen 9 5900X","manufacturer":"AMD","price":549,"quantity":60,"specifications":{"cores":12,"clockSpeed":"4.8 GHz"}},
+        	  {"id":7,"type":"CPU","name":"Ryzen 5 7600","manufacturer":"AMD","price":219,"quantity":45,"specifications":{"cores":6,"clockSpeed":"4.8 GHz"}},
+        	  {"id":8,"type":"CPU","name":"Ryzen 7 5800X","manufacturer":"AMD","price":220.70,"quantity":70,"specifications":{"cores":8,"clockSpeed":"4.7 GHz"}},
+        	  {"id":9,"type":"CPU","name":"Ryzen 5 5600X","manufacturer":"AMD","price":172.03,"quantity":55,"specifications":{"cores":6,"clockSpeed":"4.6 GHz"}},
+        	  {"id":10,"type":"CPU","name":"Core i5-12400F","manufacturer":"Intel","price":137.62,"quantity":48,"specifications":{"cores":6,"clockSpeed":"3.5 GHz"}},
+        	  {"id":11,"type":"CPU","name":"Ryzen 5 4600G","manufacturer":"AMD","price":98.11,"quantity":30,"specifications":{"cores":6,"clockSpeed":"4.3 GHz"}},
+        	  {"id":12,"type":"CPU","name":"Core i7-14700KF","manufacturer":"Intel","price":429.70,"quantity":38,"specifications":{"cores":12,"clockSpeed":"6.6 GHz"}},
+        	  {"id":13,"type":"CPU","name":"Core i7-12700KF","manufacturer":"Intel","price":275.55,"quantity":42,"specifications":{"cores":12,"clockSpeed":"5.0 GHz"}},
+        	  {"id":14,"type":"CPU","name":"Ryzen 7 5800X3D","manufacturer":"AMD","price":338.61,"quantity":67,"specifications":{"cores":8,"clockSpeed":"4.5 GHz"}},
+        	  {"id":15,"type":"CPU","name":"Core i5-13400F","manufacturer":"Intel","price":227.68,"quantity":34,"specifications":{"cores":8,"clockSpeed":"5.6 GHz"}},
+        	  {"id":16,"type":"CPU","name":"Core i3-12100F","manufacturer":"Intel","price":96.91,"quantity":25,"specifications":{"cores":4,"clockSpeed":"4.3 GHz"}},
+        	  {"id":17,"type":"CPU","name":"Core i5-13600K","manufacturer":"Intel","price":319,"quantity":52,"specifications":{"cores":8,"clockSpeed":"5.10 GHz"}},
+        	  {"id":18,"type":"CPU","name":"Core i7-12700K","manufacturer":"Intel","price":249.97,"quantity":40,"specifications":{"cores":12,"clockSpeed":"4.6 GHz"}},
+        	  {"id":19,"type":"CPU","name":"Core i7-13700KF","manufacturer":"Intel","price":386.49,"quantity":47,"specifications":{"cores":12,"clockSpeed":"5.4 GHz"}},
+        	  {"id":20,"type":"CPU","name":"Core i7-14700K","manufacturer":"Intel","price":453.04,"quantity":58,"specifications":{"cores":12,"clockSpeed":"6.6 GHz"}},
+        	  {"id":21,"type":"CPU","name":"Ryzen 3 3200G","manufacturer":"AMD","price":78.95,"quantity":20,"specifications":{"cores":4,"clockSpeed":"4.0 GHz"}},
+        	  {"id":22,"type":"CPU","name":"Ryzen 7 8700G","manufacturer":"AMD","price":360.82,"quantity":50,"specifications":{"cores":8,"clockSpeed":"4.9 GHz"}},
+        	  {"id":23,"type":"CPU","name":"Core i712700","manufacturer":"Intel","price":294.24,"quantity":39,"specifications":{"cores":8,"clockSpeed":"4.9 GHz"}},
+        	  {"id":24,"type":"CPU","name":"Core i5-12400","manufacturer":"Intel","price":179.53,"quantity":44,"specifications":{"cores":6,"clockSpeed":"3.5 GHz"}},
+        	  {"id":25,"type":"CPU","name":"i9-14900K","manufacturer":"Intel","price":635.22,"quantity":60,"specifications":{"cores":16,"clockSpeed":"7 GHz"}},
+        	  {"id":26,"type":"CPU","name":"Core i713700K","manufacturer":"Intel","price":428.53,"quantity":51,"specifications":{"cores":12,"clockSpeed":"4.0 GHz"}},
+        	  {"id":27,"type":"CPU","name":"Core i5-12600K","manufacturer":"Intel","price":231.78,"quantity":36,"specifications":{"cores":10,"clockSpeed":"4.9 GHz"}},
+        	  {"id":28,"type":"CPU","name":"Core i9-13900K","manufacturer":"Intel","price":523.96,"quantity":45,"specifications":{"cores":16,"clockSpeed":"6.8 GHz"}},
+        	  {"id":29,"type":"CPU","name":"Ryzen 9 6900HX","manufacturer":"AMD","price":749.99,"quantity":50,"specifications":{"cores":16,"clockSpeed":"4.9 GHz"}},
+        	  {"id":30,"type":"CPU","name":"Core i5-12400KF","manufacturer":"Intel","price":187.67,"quantity":39,"specifications":{"cores":6,"clockSpeed":"3.7 GHz"}},
+        	  	{"id":201,"type":"SSD","name":"Samsung 970 EVO Plus 1TB NVMe PCIe M.2 SSD","manufacturer":"Samsung","price":179.99,"quantity":10,"specifications":{"interface":"NVMe PCIe M.2","capacity":"1TB","formFactor":"M.2"}},
+        	  	{"id":202,"type":"SSD","name":"Crucial MX500 1TB 3D NAND SATA 2.5 Inch Internal SSD","manufacturer":"Crucial","price":109.99,"quantity":15,"specifications":{"interface":"SATA","capacity":"1TB","formFactor":"2.5 Inch"}},
+        	  	{"id":203,"type":"SSD","name":"WD Blue SN550 1TB NVMe Internal SSD","manufacturer":"Western Digital","price":104.99,"quantity":20,"specifications":{"interface":"NVMe","capacity":"1TB","formFactor":"M.2"}},
+        	  	{"id":204,"type":"SSD","name":"Samsung 870 QVO SATA III 2.5 Inch SSD 1TB","manufacturer":"Samsung","price":99.99,"quantity":12,"specifications":{"interface":"SATA III","capacity":"1TB","formFactor":"2.5 Inch"}},
+        	  	{"id":205,"type":"SSD","name":"ADATA SU635 240GB SATA III 3D NAND Internal SSD","manufacturer":"ADATA","price":32.99,"quantity":18,"specifications":{"interface":"SATA III","capacity":"240GB","formFactor":"2.5 Inch"}},
+        	  	{"id":206,"type":"SSD","name":"Crucial BX500 480GB 3D NAND SATA 2.5-Inch Internal SSD","manufacturer":"Crucial","price":49.99,"quantity":25,"specifications":{"interface":"SATA","capacity":"480GB","formFactor":"2.5 Inch"}},
+        	  	{"id":207,"type":"SSD","name":"Sabrent Rocket Q 1TB NVMe PCIe M.2 Internal SSD","manufacturer":"Sabrent","price":129.99,"quantity":20,"specifications":{"interface":"NVMe PCIe M.2","capacity":"1TB","formFactor":"M.2"}},
+        	  	{"id":208,"type":"SSD","name":"ADATA Swordfish 1TB PCIe Gen3x4 M.2 2280 SSD","manufacturer":"ADATA","price":109.99,"quantity":15,"specifications":{"interface":"PCIe Gen3x4 M.2 2280","capacity":"1TB","formFactor":"M.2"}},
+        	  	{"id":209,"type":"SSD","name":"Samsung 870 EVO SATA III 2.5 Internal SSD 1TB","manufacturer":"Samsung","price":119.99,"quantity":30,"specifications":{"interface":"SATA III","capacity":"1TB","formFactor":"2.5 Inch"}},
+        	  	{"id":210,"type":"SSD","name":"SK hynix Gold P31 PCIe NVMe Gen3 M.2 2280 Internal SSD 1TB","manufacturer":"SK hynix","price":134.99,"quantity":15,"specifications":{"interface":"PCIe NVMe Gen3 M.2 2280","capacity":"1TB","formFactor":"M.2"}},
+        	  		{"id":301,"type":"RAM","name":"Corsair Vengeance RGB CMW16GX4M2C3200C16 memory module 16 GB 2 x 8 GB DDR4 3200 MHz","manufacturer":"Corsair","price":109.99,"quantity":15,"specifications":{"type":"DDR4","capacity":"16GB (2 x 8GB)","speed":"3200 MHz"}},
+        	  		{"id":302,"type":"RAM","name":"G.SKILL Trident Z RGB (For AMD) 16GB (2 x 8GB) 288-Pin DDR4 SDRAM DDR4 3600 (PC4 28800) Desktop Memory Model F4-3600C18D-16GTZRX","manufacturer":"G.SKILL","price":99.99,"quantity":20,"specifications":{"type":"DDR4","capacity":"16GB (2 x 8GB)","speed":"3600 MHz"}},
+        	  		{"id":303,"type":"RAM","name":"Crucial Ballistix RGB 3600 MHz DDR4 DRAM Desktop Gaming Memory Kit 32GB (16GBx2) CL16 BL2K16G36C16U4BL (Black)","manufacturer":"Crucial","price":189.99,"quantity":18,"specifications":{"type":"DDR4","capacity":"32GB (16GBx2)","speed":"3600 MHz"}},
+        	  		{"id":304,"type":"RAM","name":"Team T-Force Delta RGB DDR4 16GB (2x8GB) 3200MHz (PC4-25600) CL16 Desktop Memory Module ram TF4D416G3200HC16CDC01 - Black","manufacturer":"Team","price":79.99,"quantity":25,"specifications":{"type":"DDR4","capacity":"16GB (2x8GB)","speed":"3200 MHz"}},
+        	  		{"id":305,"type":"RAM","name":"ADATA XPG GAMMIX D10 DDR4 16GB (2x8GB) 3200MHz CL16 Black (AX4U320038G16A-DT10)","manufacturer":"ADATA","price":84.99,"quantity":22,"specifications":{"type":"DDR4","capacity":"16GB (2x8GB)","speed":"3200 MHz"}},
+        	  		{"id":306,"type":"RAM","name":"Corsair Vengeance LPX 16GB (2x8GB) DDR4 DRAM 3200MHz C16 Desktop Memory Kit - Black","manufacturer":"Corsair","price":94.99,"quantity":17,"specifications":{"type":"DDR4","capacity":"16GB (2x8GB)","speed":"3200 MHz"}},
+        	  		{"id":307,"type":"RAM","name":"Patriot Viper Steel DDR4 16GB (2 x 8GB) 3733MHz Kit w/Gunmetal Grey Heatshield","manufacturer":"Patriot","price":119.99,"quantity":14,"specifications":{"type":"DDR4","capacity":"16GB (2 x 8GB)","speed":"3733 MHz"}},
+        	  		{"id":308,"type":"RAM","name":"HyperX Fury 16GB (2 x 8GB) DDR4 3200MHz C16 Desktop Memory - Black","manufacturer":"HyperX","price":89.99,"quantity":19,"specifications":{"type":"DDR4","capacity":"16GB (2 x 8GB)","speed":"3200 MHz"}},
+        	  		{"id":309,"type":"RAM","name":"Crucial Ballistix RGB 3600 MHz DDR4 DRAM Desktop Gaming Memory Kit 16GB (8GBx2) CL16 BL2K8G36C16U4BL (Black)","manufacturer":"Crucial","price":99.99,"quantity":21,"specifications":{"type":"DDR4","capacity":"16GB (8GBx2)","speed":"3600 MHz"}},
+        	  		{"id":310,"type":"RAM","name":"TEAMGROUP T-Force Delta RGB DDR4 32GB (2x16GB) 3200MHz (PC4-25600) CL16 Desktop Gaming Memory Module Ram TF3D432G3200HC16CDC01 - Black","manufacturer":"TEAMGROUP","price":159.99,"quantity":16,"specifications":{"type":"DDR4","capacity":"32GB (2x16GB)","speed":"3200 MHz"}},
+        	  		{"id":311,"type":"RAM","name":"Corsair Vengeance LPX 32GB (2x16GB) DDR4 DRAM 3200MHz C16 Desktop Memory Kit - Black","manufacturer":"Corsair","price":229.99,"quantity":24,"specifications":{"type":"DDR4","capacity":"32GB (2x16GB)","speed":"3200 MHz"}},
+        	  		{"id":312,"type":"RAM","name":"G.SKILL Trident Z RGB (For AMD) 32GB (2 x 16GB) 288-Pin DDR4 SDRAM DDR4 3600 (PC4 28800) Desktop Memory Model F4-3600C18D-32GTZRX","manufacturer":"G.SKILL","price":179.99,"quantity":18,"specifications":{"type":"DDR4","capacity":"32GB (2 x 16GB)","speed":"3600 MHz"}},
+        	  		{"id":313,"type":"RAM","name":"Team T-FORCE VULCAN Z 32GB (2 x 16GB) 288-Pin DDR4 SDRAM DDR4 3200 (PC4 25600) Desktop Memory Model TLZGD432G3200HC16CDC01 - Black","manufacturer":"Team","price":169.99,"quantity":20,"specifications":{"type":"DDR4","capacity":"32GB (2 x 16GB)","speed":"3200 MHz"}},
+        	  		{"id":314,"type":"RAM","name":"Crucial Ballistix MAX RGB 32GB (2 x 16GB) 288-Pin DDR4 SDRAM DDR4 4000 (PC4 32000) Desktop Memory Model BL2K16G40C18U4BL (Black)","manufacturer":"Crucial","price":249.99,"quantity":15,"specifications":{"type":"DDR4","capacity":"32GB (2 x 16GB)","speed":"4000 MHz"}},
+        	  		{"id":315,"type":"RAM","name":"Patriot Viper Steel Series DDR4 32GB (2 x 16GB) 3733MHz Performance Memory Kit - PVS432G373C7K","manufacturer":"Patriot","price":209.99,"quantity":17,"specifications":{"type":"DDR4","capacity":"32GB (2 x 16GB)","speed":"3733 MHz"}}
+        	];
+
+        // Extract parameters for the chart
+        const labels = jsonData.map(entry => entry.name);
+        const prices = jsonData.map(entry => entry.price);
+        const quantities = jsonData.map(entry => entry.quantity);
+        const specifications = jsonData.map(entry => entry.specifications.cores);
+        
+        // Get the canvas element
+        const canvas = document.getElementById('barGraph');
+
+        // Initialize the chart
+        originalData = jsonData; // Store the original data
+        barGraph = createBarGraph(labels, prices, quantities, specifications);
+
+        // Function to create the Bar Graph
+        function createBarGraph(labels, prices, quantities, specifications) {
+            return new Chart(canvas, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Price',
+                            data: prices,
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Quantity',
+                            data: quantities,
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Specifications (Cores)',
+                            data: specifications,
+                            backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                            borderColor: 'rgba(255, 206, 86, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            stacked: true,
+                            title: {
+                                display: true,
+                                text: 'Products'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            title: {
+                                display: true,
+                                text: 'Values'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            color: 'black', 
+                            labels: {
+                                color: 'black'
+                            }
+                        }
+                    }               
+                }
+            });
+        }
+
+        // Function to filter data based on type
+        function filterData(type) {
+            const filteredData = originalData.filter(entry => entry.type === type);
+            const filteredLabels = filteredData.map(entry => entry.name);
+            const filteredPrices = filteredData.map(entry => entry.price);
+            const filteredQuantities = filteredData.map(entry => entry.quantity);
+            const filteredSpecifications = filteredData.map(entry => entry.specifications.cores);
+
+ 
+            
+            // Update the chart data
+            barGraph.data.labels = filteredLabels;
+            barGraph.data.datasets[0].data = filteredPrices;
+            barGraph.data.datasets[1].data = filteredQuantities;
+            barGraph.data.datasets[2].data = filteredSpecifications;
+
+            // Update the chart
+            barGraph.update();
+        }
+    </script>
+</body>
+</html>
