@@ -1,0 +1,290 @@
+
+@font-face {
+	font-family: 'Hoefler';
+	src: url('../font/Hoefler-Text.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'UltraLineTwo';
+	src: url('../font/Bold/UltraSystemSansLineTwo.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'UltraItalic';
+	src: url('../font/UltraSystemSansItalic.otf') format('opentype');
+}
+
+
+
+
+@font-face {
+	font-family: 'MontBlack';
+	src: url('../font/Mont-Black.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'UltraLineTwo';
+	src: url('../font/Bold/UltraSystemSansLineTwo.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'MontLight';
+	src: url('../font/Mont-Light.otf') format('opentype');
+}
+
+/* Reset Styles */
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Font Styles */
+.hoefler {
+	font-family: Hoefler, serif;
+}
+
+.ultralinetwo {
+	font-family: UltraLineTwo, serif;
+}
+
+.ultraitalic {
+	font-family: UltraItalic, serif;
+}
+
+.montblack {
+	font-family: MontBlack, serif;
+}
+
+.montlight {
+	font-family: MontLight, serif;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.weight-700 {
+	font-weight: 900;
+}
+
+.ProductSans {
+	font-family: "Product Sans", serif;
+}
+
+/* Background and Navbar Styles */
+.bg-black, .navbar-black {
+	background-color: #101010 !important;
+}
+
+.navbar-nav>li {
+	font-size: 14px;
+	text-transform: uppercase;
+	padding: 0px 15px;
+	color: #C5CAE9;
+	text-decoration: none;
+}
+
+.navbar-brand {
+	font-size: 20px;
+	font-weight: bold;
+	float: left;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	cursor: pointer;
+}
+
+.navbar {
+	width: 100%;
+	height: 75px;
+	line-height: 75px;
+	padding: 0px 20px;
+	position: fixed;
+	top: 0px;
+}
+
+/* Welcome Section Styles */
+.welcome {
+	padding-top: 30vh;
+	height: 100vh;
+	background: url("../img/background1.gif") no-repeat center;
+	background-size: cover;
+}
+.scroll {
+	position: absolute;
+	bottom: 0;
+}
+
+.underline-yellow {
+	text-decoration: underline;
+	text-decoration-color: #ffc048 !important;
+}
+
+.welcome .container {
+	vertical-align: middle;
+}
+
+/* Login Section Styles */
+.login {
+	text-align: center;
+	padding: 20px 0;
+	border-radius: 10px;
+	background: #101010;
+	height: 50vh;
+	margin: auto;
+}
+
+/* Product Section Styles */
+.product {
+	height: auto;
+	width: 150px;
+	transition: all ease 0.3s;
+}
+
+.product:hover {
+	transform: scale(2.5);
+}
+
+/* Navbar Dropdown Styles */
+nav .dropdown-menu>a:hover, nav .dropdown-menu>a:focus {
+	background-image: none !important;
+}
+
+nav .dropdown-menu>a:hover, nav .dropdown-menu>a:focus {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Background Image Styles */
+.bg-background {
+	background: url("../img/background.jpg");
+	background-size: cover;
+	width: 100%;
+}
+
+/* Responsive Styles */
+@media ( max-width : 700px) {
+	form[action="LoginServlet"] input[type="text"], form[action="LoginServlet"] input[type="password"]
+		{
+		/* Styles for small screens */
+		
+	}
+	.navbar {
+		position: fixed;
+		width: 100%;
+	}
+	.welcome {
+		margin: auto;
+		padding: 0;
+	}
+	.welcome .container .col {
+		transform: translateY(25vh);
+	}
+	.login {
+		background: #2c2f33;
+		height: 100vh;
+		border-radius: 0;
+	}
+	.login form {
+		transform: translateY(50%);
+	}
+}
+
+/* Additional Styles */
+p22 {
+	word-spacing: 10px;
+}
+
+
+/*chart bar settings */
+
+.filter-buttons01 button {
+    padding: 20px;
+    margin: 80px 10px 20px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filter-buttons01 {
+    margin-top: 70px; /* Adjust this value as needed */
+}
+
+.filter-buttons01 button:hover {
+    background-color: #ffc048;
+}
+
+.footer { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    z-index: 10;
+}
+::placeholder{
+	color:#fcfafa;
+}
+
+.filter-buttons01 {
+    z-index: 1000; 
+}
+
+.filter-buttons01 {
+    position: relative;
+    top: 30px; 
+}
+
+/* Setings for smaller screens */
+@media (max-width: 600px) {
+    #app {
+        padding: 10px; 
+    }
+    nav {
+        padding: 0px 10px; 
+    }
+    nav .logo p {
+        font-size: 18px; 
+    }
+    nav li a {
+        font-size: 12px; 
+        padding: 0px 10px; 
+    }
+    .container {
+        align-items: center;
+    }
+	 input[type="text"],
+    select,
+    #price-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    button {
+        width: 100%;
+    }
+}
+
+/* Order review settings*/
+
+.container6 {
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding to create space between content and container edges */
+    background-color: #ffffff; /* Set the background color */
+    border-radius: 8px; /* Add rounded corners to the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+}
+
+.table tbody tr {
+    background-color: white;
+}
+
+
+mbody {
+    padding-top: 70px; /* Adjust the value according to your navbar height */
+}
+
+
+
+
+

@@ -1,0 +1,323 @@
+{
+    "CPUs": [
+      {
+        "brand": "Intel",
+        "model": "Core i9-11900K",
+        "speed": {
+          "base_clock": "3.5 GHz",
+          "boost_clock": "5.3 GHz"
+        },
+        "platform": "LGA 1200",
+        "wattage": "125W",
+        "price": "$549"
+      },
+      {
+        "brand": "AMD",
+        "model": "Ryzen 9 5900X",
+        "speed": {
+          "base_clock": "3.7 GHz",
+          "boost_clock": "4.8 GHz"
+        },
+        "platform": "AM4",
+        "wattage": "105W",
+        "price": "$549"
+      },
+      {
+        "brand": "AMD",
+        "model": "Ryzen 5 7600",
+        "speed": {
+          "base_clock": "3.7 GHz",
+          "boost_clock": "4.8 GHz"
+        },
+        "platform": "AM4",
+        "wattage": "65W",
+        "price": "$219"
+      },
+      {
+        "brand": "AMD",
+        "model": "Ryzen 7 5800X",
+        "speed": {
+          "base_clock": "4.7 GHz",
+          "boost_clock": "3.8 GHz"
+        },
+        "platform": "AM4",
+        "wattage": "105W",
+        "price": "$220.70"
+      },
+      {
+        "brand": "AMD",
+        "model": "Ryzen 5 5600X",
+        "speed": {
+          "base_clock": "3.7 GHz",
+          "boost_clock": "4.6 GHz"
+        },
+        "platform": "AM4",
+        "wattage": "65W",
+        "price": "$172.03"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i5-12400F",
+        "speed": {
+          "base_clock": "2.5 GHz",
+          "boost_clock": "3.5 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "65W",
+        "price": "$137.62"
+      },
+      {
+        "brand": "AMD",
+        "model": "Ryzen 5 4600G",
+        "speed": {
+          "base_clock": "3.7 GHz",
+          "boost_clock": "4.3 GHz"
+        },
+        "platform": "AM4",
+        "wattage": "65W",
+        "price": "$98.11"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i7-14700KF",
+        "speed": {
+          "base_clock": "5.6 GHz",
+          "boost_clock": "6.6 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "125W",
+        "price": "$429.70"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i7-12700KF",
+        "speed": {
+          "base_clock": "3.6 GHz",
+          "boost_clock": "5.0 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "125W",
+        "price": "$275.55"
+      },
+      {
+        "brand": "AMD",
+        "model": "Ryzen 7 5800X3D",
+        "speed": {
+          "base_clock": "3.4 GHz",
+          "boost_clock": "4.5 GHz"
+        },
+        "platform": "AM4",
+        "wattage": "105W",
+        "price": "$338.61"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i5-13400F",
+        "speed": {
+          "base_clock": "4.6 GHz",
+          "boost_clock": "5.6 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "65W",
+        "price": "$227.68"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i3-12100F",
+        "speed": {
+          "base_clock": "3.3 GHz",
+          "boost_clock": "4.3 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "58W",
+        "price": "$96.91"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i5-13600K",
+        "speed": {
+          "base_clock": "3.5 GHz",
+          "boost_clock": "5.10 GHz"
+        },
+        "platform": "LGA 1356",
+        "wattage": "125W",
+        "price": "$319"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i7-12700K",
+        "speed": {
+          "base_clock": "3.6 GHz",
+          "boost_clock": "4.6 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "125W",
+        "price": "$249.97"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i7-13700KF",
+        "speed": {
+          "base_clock": "3.4 GHz",
+          "boost_clock": "5.4 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "125W",
+        "price": "$386.49"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i7-14700K",
+        "speed": {
+          "base_clock": "5.6 GHz",
+          "boost_clock": "6.6 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "125W",
+        "price": "$453.04"
+      },
+      {
+        "brand": "AMD",
+        "model": "Ryzen 3 3200G",
+        "speed": {
+          "base_clock": "3.6 GHz",
+          "boost_clock": "4.0 GHz"
+        },
+        "platform": "AM4",
+        "wattage": "65W",
+        "price": "$78.95"
+      },
+      {
+        "brand": "AMD",
+        "model": "Ryzen 7 8700G",
+        "speed": {
+          "base_clock": "4.2 GHz",
+          "boost_clock": "4.9 GHz"
+        },
+        "platform": "AM4",
+        "wattage": "65W",
+        "price": "$360.82"
+      },{
+        "brand": "Intel",
+        "model": "Core i712700",
+        "speed": {
+          "base_clock": "2.1",
+          "boost_clock": "4.9 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "65W",
+        "price": "$294.24"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i5-12400",
+        "speed": {
+          "base_clock": "2.5 GHz",
+          "boost_clock": "3.5 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "65W",
+        "price": "$179.53"
+      },
+      {
+        "brand": "Intel",
+        "model": "i9-14900K",
+        "speed": {
+          "base_clock": "6 GHz",
+          "boost_clock": "7 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "125W",
+        "price": "$635.22"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i713700K",
+        "speed": {
+          "base_clock": "3.4 GHz",
+          "boost_clock": "4.0 GHz"
+        },
+        "platform": "LGA 1351",
+        "wattage": "125W",
+        "price": "$428.53"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i5-12600K",
+        "speed": {
+          "base_clock": "3.7 GHz",
+          "boost_clock": "4.8 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "125W",
+        "price": "$231.78"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i5-13500",
+        "speed": {
+          "base_clock": "4.8 GHz",
+          "boost_clock": "5.8 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "65W",
+        "price": "$263.88"
+      },
+      {
+        "brand": "AMD",
+        "model": "Ryzen 5 7600",
+        "speed": {
+          "base_clock": "3.7 GHz",
+          "boost_clock": "4.8 GHz"
+        },
+        "platform": "AM4",
+        "wattage": "65W",
+        "price": "$219"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i9-14900KF",
+        "speed": {
+          "base_clock": "6 GHz",
+          "boost_clock": "7 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "125W",
+        "price": "$596.69"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i5-14400F",
+        "speed": {
+          "base_clock": "4.7 GHz",
+          "boost_clock": "5 GHz"
+        },
+        "platform": "LGA 1700",
+        "wattage": "125W",
+        "price": "$227.68"
+      },
+      {
+        "brand": "Intel",
+        "model": "Core i9-9900K",
+        "speed": {
+          "base_clock": "5 GHz",
+          "boost_clock": "6 GHz"
+        },
+        "platform": "LGA 1151",
+        "wattage": "95W",
+        "price": "$525.49"
+      },
+      {
+        "brand": "AMD",
+        "model": "Ryzen 5 5500GT",
+        "speed": {
+          "base_clock": "3.6 GHz",
+          "boost_clock": "4.6 GHz"
+        },
+        "platform": "AM4",
+        "wattage": "65W",
+        "price": "$137.63"
+      }
+    ]
+  }
+  

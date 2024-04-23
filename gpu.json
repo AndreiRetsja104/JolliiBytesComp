@@ -1,0 +1,346 @@
+{
+    "graphicsCards": [
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 3080",
+        "memorySize": "10GB",
+        "memoryType": "GDDR6X",
+        "coreClock": "1.44 GHz",
+        "boostClock": "1.71 GHz",
+        "price": 699.99,
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 6800 XT",
+        "memorySize": "16GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.82 GHz",
+        "boostClock": "2.25 GHz",
+        "price": 649.99,
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 3070",
+        "memorySize": "8GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.50 GHz",
+        "boostClock": "1.73 GHz",
+        "price": 499.99,
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 6700 XT",
+        "memorySize": "12GB",
+        "memoryType": "GDDR6",
+        "coreClock": "2.42 GHz",
+        "boostClock": "2.58 GHz",
+        "price": 479.99,
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 3090 Ti",
+        "memorySize": "24GB",
+        "memoryType": "GDDR6X",
+        "coreClock": "1.67 GHz",
+        "boostClock": "1.86 GHz",
+        "price": "1,970",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 3090",
+        "memorySize": "24GB",
+        "memoryType": "GDDR6X",
+        "coreClock": "1.40 GHz",
+        "boostClock": "1.70 GHz",
+        "price": "1,739.00",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 3080 Ti",
+        "memorySize": "10GB",
+        "memoryType": "GDDR6X",
+        "coreClock": "1.44 GHz",
+        "boostClock": "1.71 GHz",
+        "price": "1,269.00",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 3070 Ti",
+        "memorySize": "8GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.58 GHz",
+        "boostClock": "1.77 GHz",
+        "price": "699.99",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 3060",
+        "memorySize": "8GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.32 GHz",
+        "boostClock": "1.78 GHz",
+        "price": "349.00",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 3060 Ti",
+        "memorySize": "8GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.41 GHz",
+        "boostClock": "1.67 GHz",
+        "price": "579.90",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 4090",
+        "memorySize": "24GB",
+        "memoryType": "GDDR6X",
+        "coreClock": "2.2 GHz",
+        "boostClock": "2.52 GHz",
+        "price": "1,629.99",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 4080",
+        "memorySize": "16GB",
+        "memoryType": "GDDR6X",
+        "coreClock": "2.2 GHz",
+        "boostClock": "2.52 GHz",
+        "price": "1,199.99",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 4070 Ti",
+        "memorySize": "12GB",
+        "memoryType": "GDDR6X",
+        "coreClock": "2.3 GHz",
+        "boostClock": "2.62 GHz",
+        "price": "799.99",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 4060 Ti",
+        "memorySize": "16GB",
+        "memoryType": "GDDR6",
+        "coreClock": "2.6 GHz",
+        "boostClock": "2.3 GHz",
+        "price": "482",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 2080 Ti",
+        "memorySize": "11GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.35 GHz",
+        "boostClock": "1.66 GHz",
+        "price": "588.06 (Used)",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 2080 Super",
+        "memorySize": "8GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.65 GHz",
+        "boostClock": "1.83 GHz",
+        "price": "394.02 (Used)",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "RTX 2070 Super",
+        "memorySize": "8GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.60 GHz",
+        "boostClock": "1.80 GHz",
+        "price": "358 (Used)",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "GTX 1080 Ti",
+        "memorySize": "11GB",
+        "memoryType": "GDDR5X",
+        "coreClock": "1.56 GHz",
+        "boostClock": "1.63 GHz",
+        "price": "429.99 (Used)",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "GTX 1080",
+        "memorySize": "8GB",
+        "memoryType": "GDDR5X",
+        "coreClock": "1.68 GHz",
+        "boostClock": "1.82 GHz",
+        "price": "245 (Used)",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "GTX 1070 Ti",
+        "memorySize": "8GB",
+        "memoryType": "GDDR5",
+        "coreClock": "1.60 GHz",
+        "boostClock": "1.68 GHz",
+        "price": "333 (Used)",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "NVIDIA",
+        "model": "GTX 1060",
+        "memorySize": "3GB",
+        "memoryType": "GDDR5",
+        "coreClock": "1.6 GHz",
+        "boostClock": "1.83 GHz",
+        "price": "399.00",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 6900 XT",
+        "memorySize": "16GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.9 GHz",
+        "boostClock": "2.3 GHz",
+        "price": "629.99",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 6600 XT",
+        "memorySize": "8GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.96 GHz",
+        "boostClock": "2.6 GHz",
+        "price": "399.00",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 7700 XT",
+        "memorySize": "12GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.7 GHz",
+        "boostClock": "2.5 GHz",
+        "price": "449.99",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 7800 XT",
+        "memorySize": "16GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.4 GHz",
+        "boostClock": "2.4 GHz",
+        "price": "509.99",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 7900 XT",
+        "memorySize": "20GB",
+        "memoryType": "GDDR6",
+        "coreClock": "2.0 GHz",
+        "boostClock": "2.5 GHz",
+        "price": "839.99",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 7900 XTX",
+        "memorySize": "24GB",
+        "memoryType": "GDDR6",
+        "coreClock": "2.3 GHz",
+        "boostClock": "2.6 GHz",
+        "price": "1,029.99",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 550",
+        "memorySize": "4GB",
+        "memoryType": "GDDR5",
+        "coreClock": "1.2 GHz",
+        "boostClock": "1.5 GHz",
+        "price": "1,029.99",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 5550 XT",
+        "memorySize": "8GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.6 GHz",
+        "boostClock": "1.8 GHz",
+        "price": "398.68 (Used)",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 5550 XT",
+        "memorySize": "8GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.6 GHz",
+        "boostClock": "1.8 GHz",
+        "price": "398.68 (Used)",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 560",
+        "memorySize": "4GB",
+        "memoryType": "GDDR5",
+        "coreClock": "1.2 GHz",
+        "boostClock": "None",
+        "price": "289.00",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 5600 XT",
+        "memorySize": "6GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.2 GHz",
+        "boostClock": "1.7 GHz",
+        "price": "250.00 (Used)",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 570",
+        "memorySize": "8GB",
+        "memoryType": "GDDR5",
+        "coreClock": "1.1 GHz",
+        "boostClock": "1.2 GHz",
+        "price": "339.95",
+        "currency": "USD"
+      },
+      {
+        "manufacturer": "AMD",
+        "model": "Radeon RX 5700 XT",
+        "memorySize": "8GB",
+        "memoryType": "GDDR6",
+        "coreClock": "1.8 GHz",
+        "boostClock": "2.0 GHz",
+        "price": "389.00 (Used)",
+        "currency": "USD"
+      }
+
+    ]
+  }
+  

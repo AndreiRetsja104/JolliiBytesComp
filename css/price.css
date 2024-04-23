@@ -1,0 +1,22 @@
+body{
+	margin:0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #f0f0f0;
+	
+}
+
+.pricecontainer {
+	display: flex;
+	width: 1500px;
+	height: 700px;	
+	padding: 30px;
+	background-color: #fff;
+	border:1px solid #ccc;
+	border-radius: 35px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
