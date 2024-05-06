@@ -13,7 +13,7 @@
 	style="background: url('img/tbackground1.gif')">
 <nav class="navbar navbar-expand-lg navbar-dark navbar-black bg-black fixed-top pt-4 pb-4 text-center">
     <div class="container">
-        <a class="navbar-brand montblack" href="welcome.html">
+        <a class="navbar-brand montblack" href="home.html">
             <img src="img/Logo_JolliBytesComp_96x96.png" width="40" height="40" alt="JolliBytesComp Logo" />
             JolliBytesComp
         </a>
@@ -55,15 +55,15 @@
                         <a class="dropdown-item text-white" href="contact.html">Contact Us</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown montlight">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false">Account</a>
-                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
-                        <a class="dropdown-item text-white" href="login.html"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
-                        <a class="dropdown-item text-white" href="registration.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
-                    </div>
-                </li>
+                	<li class="nav-item dropdown montlight"><a
+                        class="nav-link dropdown-toggle" href="#" role="button"
+                        id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"> Account </a>
+                        <div class="dropdown-menu bg-dark bg-black"
+                            aria-labelledby="dropaccount">
+                            <a class="dropdown-item text-white" href="index.html"><i
+                                class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                        </div></li>
             </ul>
             <span class="navbar-text montlight">
                 <form class="form-inline" action="SearchServlet" method="get">
@@ -279,5 +279,12 @@
             barGraph.update();
         }
     </script>
+    	<!-- JQuery -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>

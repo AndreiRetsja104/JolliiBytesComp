@@ -14,41 +14,63 @@
 <body class="bg-background" style="background: url('img/test.png')">
 <nav class="navbar navbar-expand-lg navbar-dark navbar-black bg-black fixed-top pt-4 pb-4 text-center">
     <div class="container">
-        <a class="navbar-brand montblack" href="index.html">
-            <img src="img\Logo_JolliBytesComp_96x96.png" width="40" height="40"/> JolliBytesComp
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand montblack" href="index.html"><img src="img/Logo_JolliBytesComp_96x96.png" width="40" height="40" alt="JolliBytesComp Logo" />JolliBytesComp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto montlight" style="padding-right: 40px;">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                <li class="nav-item dropdown montlight">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Information of Products</a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsCPU.html">Comparison CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ShopDisplayProductsGPU.html">Comparison GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="cpuAllDisplayTable.html">All CPU Information Table</a>
+                        <a class="dropdown-item text-white" href="gpuAllDisplayTable.html">All GPU Information Table</a>
+                        <a class="dropdown-item text-white" href="ChartForJason.html">Chart</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown montlight active" id="shop">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropshop" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Shop <span class="sr-only">(current)</span></a>
+                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropshop">
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=GPU">GPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=CPU">CPU</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=SSD">SSD</a>
+                        <a class="dropdown-item text-white" href="QueryServlet?producttype=RAM">RAM</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown montlight active">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropsupport" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Support 
-                    </a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       id="dropsupport" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Support</a>
                     <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropsupport">
                         <a class="dropdown-item text-white" href="contact.html">Contact Us</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown montlight">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropaccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Account
-                    </a>
-                    <div class="dropdown-menu bg-dark bg-black" aria-labelledby="dropaccount">
-                        <a class="dropdown-item text-white" href="login.html"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
-                        <a class="dropdown-item text-white" href="registration.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
-                    </div>
-                </li>
+                	<li class="nav-item dropdown montlight"><a
+                        class="nav-link dropdown-toggle" href="#" role="button"
+                        id="dropaccount" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"> Account </a>
+                        <div class="dropdown-menu bg-dark bg-black"
+                            aria-labelledby="dropaccount">
+                            <a class="dropdown-item text-white" href="index.html"><i
+                                class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                        </div></li>
             </ul>
             <span class="navbar-text montlight">
                 <form class="form-inline" action="SearchServlet" method="get">
                     <div class="input-group">
                         <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" aria-describedby="Search Button">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-warning" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <button class="btn btn-outline-warning" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -134,6 +156,11 @@
                     }
                 }
             %>
+            				<tr>
+                			<!-- Display the discount -->
+                  				<th colspan="6" class="text-right">Discount:</th>
+    							<td><%= request.getAttribute("discount") %><td>
+    						</tr>
         </tbody>
     </table>
     <tfoot>
@@ -151,10 +178,16 @@
 <p><h6>Phone:</h6> <%= request.getAttribute("phone") %></p>
 <p><h6>Email:</h6> <%= request.getAttribute("email") %></p>
     <!-- Add payment options and proceed button here -->
-    
     <form action="payment_details_form.jsp" method="post">
-    <input type="submit" value="Proceed with Payment">
+     <button type="submit" class="btn btn-primary">Proceed with Payment</button>
 	</form>
 </div>
+<!-- JQuery -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
 </body4>
 </html>
